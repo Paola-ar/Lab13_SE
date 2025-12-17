@@ -11,6 +11,12 @@ class Controller:
         """ Handler per gestire creazione del grafo """""
         # TODO
 
+        self._model.buildWeightedGraph()
+        self._view.lista_visualizzazione_1.clear()
+        self._view.lista_visualizzazione_1.append(ft.Text(f" Numero vertici: {self._model.G.number_of_nodes()}, numero archi: {self._model.G.number_of_edges()}"))
+        min_p, max_p = self._model.get_edges_weight_min_max()
+        self._view.lista_visualizzazione_1.append(ft.Text(f"Informazioni sui pesi degli archi - valore minimo: {min_p} e valore massimo: {max_p}"))
+
     def handle_conta_edges(self, e):
         """ Handler per gestire il conteggio degli archi """""
         # TODO
